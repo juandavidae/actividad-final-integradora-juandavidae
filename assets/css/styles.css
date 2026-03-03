@@ -1,0 +1,176 @@
+/* --- Variables para facilitar cambios de color --- */
+:root {
+    --primario: #f39c12; /* Naranja amigable */
+    --secundario: #2c3e50; /* Azul oscuro elegante */
+    --acento: #27ae60; /* Verde para precios */
+    --fondo: #f4f7f6;
+    --blanco: #ffffff;
+}
+
+/* --- Reset General --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fondo);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap; /* Para que no se amontone en móvil */
+}
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primario);
+}
+
+/* --- Sección Hero (Inicio) --- */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--blanco);
+}
+
+.hero img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- Grids (Categorías y Productos) --- */
+.grid-contenedor, .grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive automático */
+    gap: 30px;
+    padding: 40px 10% ;
+}
+
+/* --- Tarjetas (Cards) --- */
+.card, .producto {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .producto:hover {
+    transform: translateY(-10px);
+}
+
+.card img, .producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto h3 { margin: 10px 0; }
+.producto p { color: #666; font-size: 0.9rem; }
+.producto .precio { 
+    color: var(--acento); 
+    font-weight: bold; 
+    font-size: 1.4rem; 
+    display: block;
+    margin: 10px 0;
+}
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+}
+
+/* --- Formulario de Contacto --- */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#mensajes-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: none; /* Se activa con JS */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 50px;
+}
+
+/* --- Responsive para Pantallas Pequeñas --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    .grid-contenedor, .grid-productos {
+        padding: 20px 5%;
+    }
+}
