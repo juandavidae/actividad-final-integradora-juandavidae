@@ -17,10 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/**
- * Función principal de validación del formulario
- * Retorna true si todos los campos son válidos, false si hay errores
- */
+
 function validateForm() {
     let isValid = true;
     
@@ -129,7 +126,3 @@ function validarCampoTexto(campo, minLength) {
     }
 }
 
-// Ejemplo de uso de la función auxiliar:
-// if (!validarCampoTexto(nombre, 2)) {
-//     isValid = false;
-// }
