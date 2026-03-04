@@ -1,28 +1,23 @@
-// Esperar a que el DOM esté completamente cargado
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
     
-    // Escuchar el evento submit del formulario
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenir envío por defecto
+        event.preventDefault(); 
         
-        // Llamar a la función de validación
         if (validateForm()) {
             alert('✅ ¡Formulario válido! Registro exitoso.');
             // Opcional: limpiar el formulario después de enviar
-            // form.reset();
         } else {
             alert('❌ Por favor, corrija los errores en el formulario.');
         }
     });
 });
 
-
 function validateForm() {
     let isValid = true;
     
     // Nombre
-
     const nombre = document.getElementById('nombre');
     const valorNombre = nombre.value.trim();
     
@@ -37,7 +32,6 @@ function validateForm() {
     }
     
     // Ciudad
-
     const ciudad = document.getElementById('ciudad');
     const valorCiudad = ciudad.value.trim();
     
@@ -52,11 +46,9 @@ function validateForm() {
     }  
        
     // Email
-
     const email = document.getElementById('email');
     const valorEmail = email.value.trim();
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 
     if (valorEmail === '' || !regexEmail.test(valorEmail)) {
         email.classList.add('no-valid');
@@ -66,7 +58,6 @@ function validateForm() {
     }
     
     // Asunto
-
     const asunto = document.getElementById('asunto');
     const valorAsunto = asunto.value.trim();
     const regexAsunto = /^.{10,}$/;
@@ -82,7 +73,6 @@ function validateForm() {
     }
     
     // Descripción
-
     const descripcion = document.getElementById('descripcion');
     const valorDescripcion = descripcion.value.trim();
     const regexDescripcion = /^.{10,}$/;
@@ -95,12 +85,10 @@ function validateForm() {
         descripcion.classList.add('no-valid');
     } else {
         descripcion.classList.remove('no-valid');
-    }
-   
+    }  
     // Retornar el resultado final de la validación
     return isValid;
 }
-
 
 // ==========================================
 // FUNCIONES AUXILIARES (OPCIONALES)
